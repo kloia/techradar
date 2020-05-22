@@ -1,7 +1,7 @@
 # Motivation
 
-At [Zalando](http://zalando.de), we maintain a [public Tech
-Radar](http://zalando.github.io/tech-radar/) to help our engineering teams
+At [Kloia](httpa://wwww.kloia.com), we maintain a [public Tech
+Radar](https://kloia.github.io/techradar/docs/index.html) to help our consultants
 align on technology choices. It is based on the [pioneering work
 by ThoughtWorks](https://www.thoughtworks.com/radar).
 

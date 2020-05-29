@@ -1,6 +1,10 @@
+# Public Link
+
+[Kloia TechRadar](https://kloia.github.io/techradar/docs/index.html)
+
 # Motivation
 
-At [Kloia](httpa://wwww.kloia.com), we maintain a [public Tech
+At [Kloia](https://www.kloia.com), we maintain a [public Tech
 Radar](https://kloia.github.io/techradar/docs/index.html) to help our consultants
 align on technology choices. It is based on the [pioneering work
 by ThoughtWorks](https://www.thoughtworks.com/radar).

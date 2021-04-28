@@ -21,16 +21,15 @@ radar_visualization({
   width: 1450,
   height: 1000,
   colors: {
-    background: "#fff",
     grid: "#bbb",
-    inactive: "#ddd"
+    inactive: "#fff"
   },
   title: "Kloia Tech Radar",
   quadrants: [
-    { name: "Practices/Patterns" },
-    { name: "Infrastructure/Cloud" },
-    { name: "Frameworks" },
-    { name: "Tools/Data Management" }
+    { name: "Test Automation" },
+    { name: "Platform/Devops" },
+    { name: "Software" },
+    { name: "Management" }
   ],
   rings: [
     { name: "ADOPT", color: "#93c47d" },
@@ -42,7 +41,7 @@ radar_visualization({
   // zoomed_quadrant: 0,
   //ENTRIES
   entries: [
-      {
+  {
         quadrant: 3,
         ring: 0,
         label: "Jenkins",
@@ -441,7 +440,7 @@ radar_visualization({
         active: false,
         link: "../queues/rabbitmq.html",
         moved: 0
-      },
+      }
   ]
   //ENTRIES
 });

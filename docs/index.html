@@ -26,10 +26,10 @@ radar_visualization({
   },
   title: "Kloia Tech Radar",
   quadrants: [
-    { name: "Test Automation" },
-    { name: "Platform/Infrastructure" },
-    { name: "Software" },
-    { name: "Cloud" }
+    { name: "Language&Frameworks" },
+    { name: "Methods&Patterns" },
+    { name: "Platforms" },
+    { name: "Tools" }
   ],
   rings: [
     { name: "ADOPT", color: "#93c47d" },
@@ -43,8 +43,16 @@ radar_visualization({
   entries: [
   {
         quadrant: 3,
-        ring: 0,
-        label: "Jenkins",
+        ring: 1,
+        label: "Adaptive Branching",
+        active: false,
+        link: "",
+        moved: 0
+      },
+      {
+        quadrant: 3,
+        ring: 1,
+        label: "Dynamic Environments",
         active: false,
         link: "",
         moved: 0
@@ -52,49 +60,49 @@ radar_visualization({
       {
         quadrant: 3,
         ring: 0,
-        label: "Spark",
+        label: "CQRS/Event Sourcing",
         active: false,
-        link: "../data_processing/spark.html",
+        link: "",
         moved: 0
       },
       {
         quadrant: 3,
-        ring: 2,
-        label: "Hadoop",
+        ring: 1,
+        label: "Event Storming",
         active: false,
-        link: "../data_processing/hadoop.html",
+        link: "",
         moved: 0
       },
       {
         quadrant: 3,
-        ring: 0,
-        label: "AWS S3",
+        ring: 1,
+        label: "Trunk-based Development",
         active: false,
-        link: "../datastores/aws_s3.html",
+        link: "",
         moved: 0
       },
       {
         quadrant: 3,
-        ring: 0,
-        label: "Cassandra",
+        ring: 1,
+        label: "BFF(Backend for Frontend)",
         active: false,
-        link: "../datastores/cassandra.html",
-        moved: 0
-      },
-      {
-        quadrant: 3,
-        ring: 0,
-        label: "Elasticsearch",
-        active: false,
-        link: "../datastores/elasticsearch.html",
+        link: "",
         moved: 0
       },
       {
         quadrant: 3,
         ring: 3,
-        label: "ZooKeeper",
+        label: "Reactive Programming",
         active: false,
-        link: "../datastores/zookeeper.html",
+        link: "",
+        moved: 0
+      },
+      {
+        quadrant: 3,
+        ring: 4,
+        label: "Micro Frontends",
+        active: false,
+        link: "",
         moved: 0
       },
       {
@@ -115,58 +123,34 @@ radar_visualization({
       },
       {
         quadrant: 2,
-        ring: 1,
-        label: "Angular",
+        ring: 0,
+        label: "Karate Framework",
         active: false,
-        link: "../frameworks/angular.html",
+        link: "",
         moved: 0
       },
       {
         quadrant: 2,
-        ring: 2,
-        label: "Camunda",
+        ring: 0,
+        label: ".NET Framework",
         active: false,
-        link: "../frameworks/camunda.html",
-        moved: 0
-      },
-      {
-        quadrant: 2,
-        ring: 1,
-        label: "gRPC",
-        active: false,
-        link: "../frameworks/grpc.html",
+        link: "",
         moved: 0
       },
       {
         quadrant: 2,
         ring: 1,
-        label: "D3",
+        label: "GraphQL",
         active: false,
-        link: "../frameworks/vertx.html",
-        moved: 0
-      },
-      {
-        quadrant: 2,
-        ring: 2,
-        label: "Vue.js",
-        active: false,
-        link: "../frameworks/vuejs.html",
-        moved: 0
-      },
-      {
-        quadrant: 2,
-        ring: 3,
-        label: "AngularJS 1.x",
-        active: false,
-        link: "../frameworks/angularjs_1x.html",
+        link: "",
         moved: 0
       },
       {
         quadrant: 1,
-        ring: 0,
-        label: "Docker",
+        ring: 3,
+        label: "Camunda",
         active: false,
-        link: "../infrastructure/docker.html",
+        link: "",
         moved: 0
       },
       {
@@ -180,38 +164,6 @@ radar_visualization({
       {
         quadrant: 1,
         ring: 0,
-        label: "Nginx",
-        active: false,
-        link: "../infrastructure/nginx.html",
-        moved: 0
-      },
-      {
-        quadrant: 1,
-        ring: 0,
-        label: "OpenTracing",
-        active: false,
-        link: "../infrastructure/opentracing.html",
-        moved: 1
-      },
-      {
-        quadrant: 1,
-        ring: 0,
-        label: "Tomcat",
-        active: false,
-        link: "../infrastructure/tomcat.html",
-        moved: 0
-      },
-       {
-        quadrant: 1,
-        ring: 0,
-        label: "Terraform",
-        active: false,
-        link: "",
-        moved: 0
-      },
-      {
-        quadrant: 1,
-        ring: 0,
         label: "Rancher",
         active: false,
         link: "",
@@ -220,73 +172,73 @@ radar_visualization({
       {
         quadrant: 1,
         ring: 0,
-        label: "Tyk",
+        label: "Terragrunt",
+        active: false,
+        link: "",
+        moved: 1
+      },
+      {
+        quadrant: 1,
+        ring: 3,
+        label: "Crossplane",
+        active: false,
+        link: "",
+        moved: 0
+      },
+       {
+        quadrant: 1,
+        ring: 0,
+        label: "ArgoCD",
         active: false,
         link: "",
         moved: 0
       },
       {
-        quadrant: 3,
+        quadrant: 1,
         ring: 2,
-        label: "Sqream",
+        label: "Argo Workflow",
+        active: false,
+        link: "",
+        moved: 0
+      },
+      {
+        quadrant: 1,
+        ring: 1,
+        label: "Karpenter",
         active: false,
         link: "",
         moved: 0
       },
       {
         quadrant: 0,
-        ring: 3,
-        label: "Devs have QA role",
+        ring: 2,
+        label: "Keda",
+        active: false,
+        link: "",
+        moved: 0
+      },
+      {
+        quadrant: 0,
+        ring: 2,
+        label: "StormForge",
         active: false,
         link: "",
         moved: 0
       },
       {
         quadrant: 1,
-        ring: 3,
-        label: "Openshift",
+        ring: 1,
+        label: "External Secrets Operator",
         active: false,
         link: "",
         moved: 0
       },
       {
         quadrant: 1,
-        ring: 3,
-        label: "Terraform Workspaces",
-        active: false,
-        link: "../infrastructure/aws_lambda.html",
-        moved: 0
-      },
-      {
-        quadrant: 1,
-        ring: 2,
-        label: "AWS Lambda",
-        active: false,
-        link: "../infrastructure/aws_lambda.html",
-        moved: 0
-      },
-      {
-        quadrant: 2,
-        ring: 2,
-        label: "Go",
-        active: true,
-        link: "go.html",
-        moved: 0
-      },
-      {
-        quadrant: 2,
         ring: 0,
-        label: "Java",
-        active: true,
-        link: "java.html",
-        moved: 0
-      },
-      {
-        quadrant: 2,
-        ring: 0,
-        label: "Swagger",
-        active: true,
-        link: "openapi_swagger.html",
+        label: "Hashicorp Vault",
+        active: false,
+        link: "",
         moved: 0
       },
       {
@@ -299,147 +251,11 @@ radar_visualization({
       },
        {
         quadrant: 3,
-        ring: 3,
-        label: "NewRelic",
+        ring: 0,
+        label: "Datadog",
         active: true,
         link: "",
         moved: 1
-      },
-      {
-        quadrant: 0,
-        ring: 2,
-        label: "Reactive Programming",
-        active: true,
-        link: "",
-        moved: 1
-      },
-      {
-        quadrant: 0,
-        ring: 1,
-        label: "Strangler Fig",
-        active: true,
-        link: "",
-        moved: 1
-      },
-      {
-        quadrant: 0,
-        ring: 2,
-        label: "Diagram-as-code",
-        active: true,
-        link: "",
-        moved: 0
-      },
-       {
-        quadrant: 0,
-        ring: 2,
-        label: "Branch by Abstraction",
-        active: true,
-        link: "",
-        moved: 0
-      },
-       {
-        quadrant: 0,
-        ring: 0,
-        label: "Trunk-based Dev",
-        active: true,
-        link: "",
-        moved: 1
-      },
-      {
-        quadrant: 0,
-        ring: 0,
-        label: "Adaptive Branching",
-        active: true,
-        link: "",
-        moved: 1
-      },
-      {
-        quadrant: 0,
-        ring: 1,
-        label: "Event Storming",
-        active: true,
-        link: "",
-        moved: 1
-      },
-      {
-        quadrant: 2,
-        ring: 1,
-        label: "GraphQL",
-        active: true,
-        link: "graphql.html",
-        moved: 1
-      },
-      {
-        quadrant: 2,
-        ring: 3,
-        label: "Groovy",
-        active: true,
-        link: "groovy.html",
-        moved: 0
-      },
-      {
-        quadrant: 0,
-        ring: 3,
-        label: "Resume-Driven Dev",
-        active: true,
-        link: "net_languages.html",
-        moved: 0
-      },
-      {
-        quadrant: 2,
-        ring: 0,
-        label: ".NETCore",
-        active: true,
-        link: "net_languages.html",
-        moved: 0
-      },
-      {
-        quadrant: 2,
-        ring: 0,
-        label: "Ruby 4 Test Dev",
-        active: true,
-        link: "ruby.html",
-        moved: 0
-      },
-      {
-        quadrant: 3,
-        ring: 0,
-        label: "AWS SNS",
-        active: false,
-        link: "../queues/aws_sns.html",
-        moved: 0
-      },
-      {
-        quadrant: 3,
-        ring: 0,
-        label: "AWS SQS",
-        active: false,
-        link: "../queues/aws_sqs.html",
-        moved: 0
-      },
-      {
-        quadrant: 3,
-        ring: 0,
-        label: "Kafka",
-        active: false,
-        link: "../queues/kafka.html",
-        moved: 0
-      },
-       {
-        quadrant: 3,
-        ring: 0,
-        label: "Hazelcast",
-        active: false,
-        link: "../queues/rabbitmq.html",
-        moved: 0
-      },
-      {
-        quadrant: 3,
-        ring: 3,
-        label: ".NET Spark",
-        active: false,
-        link: "../queues/rabbitmq.html",
-        moved: 0
       }
   ]
   //ENTRIES

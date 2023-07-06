@@ -4,6 +4,9 @@
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 <title>Kloia Tech Radar</title>
 <link rel="shortcut icon" href="https://www.kloia.com/hubfs/favicon%20(3).ico">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo">
+
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="radar.js"></script>
@@ -13,255 +16,256 @@
 
 <body>
 
-<svg id="radar"></svg>
+<svg style="display:none" id="radar"></svg>
 
 <script>
-radar_visualization({
-  svg_id: "radar",
-  title: "Kloia Tech Radar",
-  width: 1450,
-  height: 1000,
-  colors: {
-    background: "#fff",
-    grid: "#bbb",
-    inactive: "#fff"
-  },
-  quadrants: [
-    { name: "Languages/Frameworks" },
-    { name: "Methods/Patterns" },
-    { name: "Platforms" },
-    { name: "Tools" }
-  ],
-  rings: [
-    { name: "ADOPT", color: "#93c47d" },
-    { name: "TRIAL", color: "#93d2c2" },
-    { name: "ASSESS", color: "#fbdb84" },
-    { name: "HOLD", color: "#efafa9" }
-  ],
-  print_layout: true,
-  // zoomed_quadrant: 0,
-  //ENTRIES
-  entries: [
-      {
-        quadrant: 3,
-        ring: 1,
-        label: "Adaptive Branching",
-        active: false,
-        link: "",
-        moved: 0
-      },
-      {
-        quadrant: 3,
-        ring: 1,
-        label: "Dynamic Environments",
-        active: false,
-        link: "",
-        moved: 0
-      },
-      {
-        quadrant: 3,
-        ring: 0,
-        label: "CQRS/Event Sourcing",
-        active: false,
-        link: "",
-        moved: 0
-      },
-      {
-        quadrant: 3,
-        ring: 1,
-        label: "Event Storming",
-        active: false,
-        link: "",
-        moved: 0
-      },
-      {
-        quadrant: 3,
-        ring: 1,
-        label: "Trunk-based Development",
-        active: false,
-        link: "",
-        moved: 0
-      },
-      {
-        quadrant: 3,
-        ring: 1,
-        label: "BFF(Backend for Frontend)",
-        active: false,
-        link: "",
-        moved: 0
-      },
-      {
-        quadrant: 3,
-        ring: 3,
-        label: "Reactive Programming",
-        active: false,
-        link: "",
-        moved: 0
-      },
-      {
-        quadrant: 3,
-        ring: 3,
-        label: "Micro Frontends",
-        active: false,
-        link: "",
-        moved: 0
-      },
-      {
-        quadrant: 2,
-        ring: 0,
-        label: "ReactJS",
-        active: false,
-        link: "../frameworks/reactjs.html",
-        moved: 0
-      },
-      {
-        quadrant: 2,
-        ring: 0,
-        label: "Spring",
-        active: false,
-        link: "../frameworks/spring.html",
-        moved: 0
-      },
-      {
-        quadrant: 2,
-        ring: 0,
-        label: "Karate Framework",
-        active: false,
-        link: "",
-        moved: 0
-      },
-      {
-        quadrant: 2,
-        ring: 0,
-        label: ".NET Framework",
-        active: false,
-        link: "",
-        moved: 0
-      },
-      {
-        quadrant: 2,
-        ring: 1,
-        label: "GraphQL",
-        active: false,
-        link: "",
-        moved: 0
-      },
-      {
-        quadrant: 1,
-        ring: 3,
-        label: "Camunda",
-        active: false,
-        link: "",
-        moved: 0
-      },
-      {
-        quadrant: 1,
-        ring: 0,
-        label: "Kubernetes",
-        active: false,
-        link: "../infrastructure/kubernetes.html",
-        moved: 0
-      },
-      {
-        quadrant: 1,
-        ring: 0,
-        label: "Rancher",
-        active: false,
-        link: "",
-        moved: 0
-      },
-      {
-        quadrant: 1,
-        ring: 0,
-        label: "Terragrunt",
-        active: false,
-        link: "",
-        moved: 1
-      },
-      {
-        quadrant: 1,
-        ring: 3,
-        label: "Crossplane",
-        active: false,
-        link: "",
-        moved: 0
-      },
-       {
-        quadrant: 1,
-        ring: 0,
-        label: "ArgoCD",
-        active: false,
-        link: "",
-        moved: 0
-      },
-      {
-        quadrant: 1,
-        ring: 2,
-        label: "Argo Workflow",
-        active: false,
-        link: "",
-        moved: 0
-      },
-      {
-        quadrant: 1,
-        ring: 1,
-        label: "Karpenter",
-        active: false,
-        link: "",
-        moved: 0
-      },
-      {
-        quadrant: 0,
-        ring: 2,
-        label: "Keda",
-        active: false,
-        link: "",
-        moved: 0
-      },
-      {
-        quadrant: 0,
-        ring: 2,
-        label: "StormForge",
-        active: false,
-        link: "",
-        moved: 0
-      },
-      {
-        quadrant: 1,
-        ring: 1,
-        label: "External Secrets Operator",
-        active: false,
-        link: "",
-        moved: 0
-      },
-      {
-        quadrant: 1,
-        ring: 0,
-        label: "Hashicorp Vault",
-        active: false,
-        link: "",
-        moved: 0
-      },
-      {
-        quadrant: 3,
-        ring: 0,
-        label: "Instana",
-        active: true,
-        link: "",
-        moved: 1
-      },
-       {
-        quadrant: 3,
-        ring: 0,
-        label: "Datadog",
-        active: true,
-        link: "",
-        moved: 1
-      }
-  ]
-  //ENTRIES
-});
+  radar_visualization({
+    svg_id: "radar",
+    title: "Kloia Tech Radar",
+    width: 1450,
+    height: 1000,
+    colors: {
+      background: "#FFF",
+      grid: "#002A61",
+      inactive: "#fff"
+    },
+    quadrants: [
+      { name: "Languages/Frameworks" },
+      { name: "Methods/Patterns" },
+      { name: "Platforms" },
+      { name: "Tools" }
+    ],
+    rings: [
+      { name: "ADOPT", color: "#93c47d" },
+      { name: "TRIAL", color: "#93d2c2" },
+      { name: "ASSESS", color: "#fbdb84" },
+      { name: "HOLD", color: "#efafa9" }
+    ],
+    print_layout: true,
+    // zoomed_quadrant: 0,
+    //ENTRIES
+    entries: [
+        {
+          quadrant: 3,
+          ring: 1,
+          label: "Adaptive Branching",
+          active: false,
+          link: "",
+          moved: 0
+        },
+        {
+          quadrant: 3,
+          ring: 1,
+          label: "Dynamic Environments",
+          active: false,
+          link: "",
+          moved: 0
+        },
+        {
+          quadrant: 3,
+          ring: 0,
+          label: "CQRS/Event Sourcing",
+          active: false,
+          link: "",
+          moved: 0
+        },
+        {
+          quadrant: 3,
+          ring: 1,
+          label: "Event Storming",
+          active: false,
+          link: "",
+          moved: 0
+        },
+        {
+          quadrant: 3,
+          ring: 1,
+          label: "Trunk-based Development",
+          active: false,
+          link: "",
+          moved: 0
+        },
+        {
+          quadrant: 3,
+          ring: 1,
+          label: "BFF(Backend for Frontend)",
+          active: false,
+          link: "",
+          moved: 0
+        },
+        {
+          quadrant: 3,
+          ring: 3,
+          label: "Reactive Programming",
+          active: false,
+          link: "",
+          moved: 0
+        },
+        {
+          quadrant: 3,
+          ring: 3,
+          label: "Micro Frontends",
+          active: false,
+          link: "",
+          moved: 0
+        },
+        {
+          quadrant: 2,
+          ring: 0,
+          label: "ReactJS",
+          active: false,
+          link: "../frameworks/reactjs.html",
+          moved: 0
+        },
+        {
+          quadrant: 2,
+          ring: 0,
+          label: "Spring",
+          active: false,
+          link: "../frameworks/spring.html",
+          moved: 0
+        },
+        {
+          quadrant: 2,
+          ring: 0,
+          label: "Karate Framework",
+          active: false,
+          link: "",
+          moved: 0
+        },
+        {
+          quadrant: 2,
+          ring: 0,
+          label: ".NET Framework",
+          active: false,
+          link: "",
+          moved: 0
+        },
+        {
+          quadrant: 2,
+          ring: 1,
+          label: "GraphQL",
+          active: false,
+          link: "",
+          moved: 0
+        },
+        {
+          quadrant: 1,
+          ring: 3,
+          label: "Camunda",
+          active: false,
+          link: "",
+          moved: 0
+        },
+        {
+          quadrant: 1,
+          ring: 0,
+          label: "Kubernetes",
+          active: false,
+          link: "../infrastructure/kubernetes.html",
+          moved: 0
+        },
+        {
+          quadrant: 1,
+          ring: 0,
+          label: "Rancher",
+          active: false,
+          link: "",
+          moved: 0
+        },
+        {
+          quadrant: 1,
+          ring: 0,
+          label: "Terragrunt",
+          active: false,
+          link: "",
+          moved: 1
+        },
+        {
+          quadrant: 1,
+          ring: 3,
+          label: "Crossplane",
+          active: false,
+          link: "",
+          moved: 0
+        },
+        {
+          quadrant: 1,
+          ring: 0,
+          label: "ArgoCD",
+          active: false,
+          link: "",
+          moved: 0
+        },
+        {
+          quadrant: 1,
+          ring: 2,
+          label: "Argo Workflow",
+          active: false,
+          link: "",
+          moved: 0
+        },
+        {
+          quadrant: 1,
+          ring: 1,
+          label: "Karpenter",
+          active: false,
+          link: "",
+          moved: 0
+        },
+        {
+          quadrant: 0,
+          ring: 2,
+          label: "Keda",
+          active: false,
+          link: "",
+          moved: 0
+        },
+        {
+          quadrant: 0,
+          ring: 2,
+          label: "StormForge",
+          active: false,
+          link: "",
+          moved: 0
+        },
+        {
+          quadrant: 1,
+          ring: 1,
+          label: "External Secrets Operator",
+          active: false,
+          link: "",
+          moved: 0
+        },
+        {
+          quadrant: 1,
+          ring: 0,
+          label: "Hashicorp Vault",
+          active: false,
+          link: "",
+          moved: 0
+        },
+        {
+          quadrant: 3,
+          ring: 0,
+          label: "Instana",
+          active: true,
+          link: "",
+          moved: 1
+        },
+        {
+          quadrant: 3,
+          ring: 0,
+          label: "Datadog",
+          active: true,
+          link: "",
+          moved: 1
+        }
+    ]
+    //ENTRIES
+  });
 </script>
+
 
 <table>
 <tr>
@@ -313,6 +317,5 @@ There is also an <a href="https://techradar.zalando.net/">internal version of th
   ga('create', 'UA-105375141-2', 'auto');
   ga('send', 'pageview');
 </script>
-
 </body>
 </html>

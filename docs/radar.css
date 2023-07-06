@@ -1,18 +1,25 @@
 body {
-  font-family: 'Source Sans Pro', arial, helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
   padding-bottom: 50px;
-  background-image: linear-gradient(135deg, rgba(32,38,57,1) 11.4%, rgba(63,76,119,1) 70.2% );
-  color: #ffffff !important;
+  /* background-image: linear-gradient(135deg, rgba(32,38,57,1) 11.4%, rgba(63,76,119,1) 70.2% ); */
+  background-color: #fff;
+  color: #002A61 !important;
+  text-align: center;
 }
 h3 {
   margin-top: 50px;
+  font-family: 'Exo', sans-serif;
+  font-size: clamp(12px, calc(1.5vw), 20px);;
 }
 li {
   margin: 25px 50px 0 0;
 }
 table {
-  width: 1400px;
+  width: max(90%, 600px);
   margin: 0 50px 0 50px;
+}
+img {
+  width: max(90%, 600px);
 }
 td {
   width: 50%;
@@ -21,4 +28,7 @@ td {
 }
 a{
   color: cornflowerblue !important;
+}
+p, li {
+  font-size: clamp(10px, calc(1.3vw), 16px);;
 }

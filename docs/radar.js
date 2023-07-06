@@ -245,8 +245,8 @@ function radar_visualization(config) {
         .text(config.rings[i].name)
         .attr("y", -rings[i].radius + 62)
         .attr("text-anchor", "middle")
-        .style("fill", "#e5e5e5")
-        .style("font-family", "Arial, Helvetica")
+        .style("fill", "#c9c9c9")
+        .style("font-family", "Roboto, Helvetica")
         .style("font-size", 42)
         .style("font-weight", "bold")
         .style("pointer-events", "none")
@@ -269,13 +269,16 @@ function radar_visualization(config) {
   // draw title and legend (only in print layout)
   if (config.print_layout) {
 
-    // title
-    radar.append("text")
-      .attr("transform", translate(title_offset.x, title_offset.y))
-      .text(config.title)
-      .style("font-family", "Arial, Helvetica")
-      .style("fill", "white")
-      .style("font-size", "34");
+    // title]
+    
+    // NOTE: Here is commented for Kloia Website
+
+    // radar.append("text")
+    //   .attr("transform", translate(title_offset.x, title_offset.y))
+    //   .text(config.title)
+    //   .style("font-family", "Arial, Helvetica")
+    //   .style("fill", "#002A61")
+    //   .style("font-size", "34");
 
     // footer
     radar.append("text")
@@ -283,7 +286,7 @@ function radar_visualization(config) {
       .text("▲ moved up     ▼ moved down")
       .attr("xml:space", "preserve")
       .style("font-family", "Arial, Helvetica")
-      .style("fill", "white")
+      .style("fill", "#002A61")
       .style("font-size", "12");
 
     // legend
@@ -296,7 +299,7 @@ function radar_visualization(config) {
         ))
         .text(config.quadrants[quadrant].name)
         .style("font-family", "Arial, Helvetica")
-        .style("fill", "cornflowerblue")
+        .style("fill", "#002A61")
         .style("font-size", "24");
       for (var ring = 0; ring < 4; ring++) {
         legend.append("text")
@@ -304,13 +307,13 @@ function radar_visualization(config) {
           .text(config.rings[ring].name)
           .style("font-family", "Arial, Helvetica")
           .style("font-size", "12")
-          .style("fill", "khaki")
+          .style("fill", "#002A61")
           .style("font-weight", "bold");
         legend.selectAll(".legend" + quadrant + ring)
           .data(segmented[quadrant][ring])
           .enter()
             .append("text")
-              .attr("fill", "white")
+              .attr("fill", "#002A61")
               .attr("transform", function(d, i) { return legend_transform(quadrant, ring, i); })
               .attr("class", "legend" + quadrant + ring)
               .attr("id", function(d, i) { return "legendItem" + d.id; })
@@ -443,5 +446,52 @@ function radar_visualization(config) {
     .nodes(config.entries)
     .velocityDecay(0.19) // magic number (found by experimentation)
     .force("collision", d3.forceCollide().radius(12).strength(0.85))
-    .on("tick", ticked);
+    .alpha(0.1)
+    .alphaMin(0.2)
+    .on("tick", ticked)
+    .on("end", convertSvgToImage);
+
 }
+
+const getSvgDataUrl = (svgData) => {
+  const canvas = document.createElement('canvas');
+  const context = canvas.getContext('2d');
+  const image = new Image();
+
+  image.onload = () => {
+    canvas.width = image.width;
+    canvas.height = image.height;
+    context.drawImage(image, 0, 0);
+
+    try {
+      const dataUrl = canvas.toDataURL('image/png');
+      image.src = dataUrl;
+    } catch (error) {
+      console.error('Failed to convert SVG to image:', error);
+    } finally {
+      URL.revokeObjectURL(image.src);
+    }
+  };
+
+  const blob = new Blob([svgData], { type: 'image/svg+xml' });
+  image.src = URL.createObjectURL(blob);
+
+  return image.src; // Return the data URL
+};
+
+
+const convertSvgToImage = () => {
+  const svgElement = document.getElementById('radar');
+  const svgData = new XMLSerializer().serializeToString(svgElement);
+  const imageSource = getSvgDataUrl(svgData);
+
+  const imageElement = new Image();
+  imageElement.onload = () => {
+    // Append the image element to the desired location in the DOM
+    document.body.prepend(imageElement); // or any other DOM element you want to append to
+  };
+  imageElement.onerror = (error) => {
+    console.error('Failed to load image:', error);
+  };
+  imageElement.src = imageSource;
+};

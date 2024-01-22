@@ -19,7 +19,7 @@ Feel free to use and adapt it for your own purposes.
 
 ```html
 <script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="http://zalando.github.io/tech-radar/release/radar-0.5.js"></script>
+<script src="./radar.js"></script>
 ```
 
 2. insert an empty `svg` tag:
@@ -54,24 +54,11 @@ radar_visualization({
     { name: "OUTER",  color: "#f4c7c3" }
   ],
   print_layout: true,
-  entries: [
-   {
-      label: "Some Entry",
-      quadrant: 3,          // 0,1,2,3 (counting clockwise, starting from bottom right)
-      ring: 2,              // 0,1,2,3 (starting from inside)
-      moved: -1             // -1 = moved out (triangle pointing down)
-                            //  0 = not moved (circle)
-                            //  1 = moved in  (triangle pointing up)
-   },
+  entries: // entries coming from config.json
     // ...
   ]
 });
 ```
-
-Entries are positioned automatically so that they don't overlap.
-
-As a working example, you can check out `docs/index.html` &mdash; the source of our [public Tech
-Radar](http://zalando.github.io/tech-radar/).
 
 ## Local Development
 
@@ -92,6 +79,16 @@ yarn start
 ```
 http://localhost:3000/
 ```
+
+## How did we deploy it?
+
+We use Cloudflare Pages to deploy our Tech Radar. It's an basic static site hosting service that is free with unlimited bandwidth. It automatically builds and deploys the site from the "master" branch of this repository whenever we push a change. There's no need to configure anything.
+
+Entries are positioned automatically so that they don't overlap.
+
+As a working example, you can check out `docs/index.html` &mdash; the source of our [public Tech
+Radar](http://zalando.github.io/tech-radar/).
+
 
 ## License
 

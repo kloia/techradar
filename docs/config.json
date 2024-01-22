@@ -1,0 +1,356 @@
+{
+    "entries": [
+        {
+          "quadrant": 0,
+          "ring": 0,
+          "label": "EKS",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 0,
+          "ring": 1,
+          "label": "Control Tower",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 3,
+          "ring": 1,
+          "label": "Adaptive Branching",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 3,
+          "ring": 1,
+          "label": "Dynamic Environments",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 3,
+          "ring": 0,
+          "label": "CQRS/Event Sourcing",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 3,
+          "ring": 1,
+          "label": "Event Storming",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 3,
+          "ring": 1,
+          "label": "Trunk-based Development",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 3,
+          "ring": 1,
+          "label": "BFF(Backend for Frontend)",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 3,
+          "ring": 3,
+          "label": "Reactive Programming",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 3,
+          "ring": 3,
+          "label": "Micro Frontends",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 2,
+          "ring": 0,
+          "label": "React",
+          "active": false,
+          "link": "../frameworks/reactjs.html",
+          "moved": 0
+        },
+        {
+          "quadrant": 2,
+          "ring": 0,
+          "label": "Redux",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 2,
+          "ring": 0,
+          "label": "MUI",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 2,
+          "ring": 0,
+          "label": "Spring",
+          "active": false,
+          "link": "../frameworks/spring.html",
+          "moved": 0
+        },
+        {
+          "quadrant": 2,
+          "ring": 0,
+          "label": "Karate Framework",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 2,
+          "ring": 0,
+          "label": ".NET",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 2,
+          "ring": 3,
+          "label": ".NET Framework",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 2,
+          "ring": 1,
+          "label": "GraphQL",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 1,
+          "label": "Camunda",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 1,
+          "label": "Auth0",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 0,
+          "label": "GitHub Copilot",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 0,
+          "label": "AWS App2Containers",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 1,
+          "label": "Tilt",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 1,
+          "label": "Microsoft .NET Upgrade Assistant",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 2,
+          "label": "sentry.io",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 2,
+          "label": "AWS Toolkit for Visual Studio",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 0,
+          "ring": 0,
+          "label": "Kubernetes",
+          "active": false,
+          "link": "../infrastructure/kubernetes.html",
+          "moved": 0
+        },
+        {
+          "quadrant": 0,
+          "ring": 0,
+          "label": "Rancher",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 0,
+          "ring": 3,
+          "label": "OpenShift",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 0,
+          "label": "Terragrunt",
+          "active": false,
+          "link": "",
+          "moved": 1
+        },
+        {
+          "quadrant": 1,
+          "ring": 3,
+          "label": "Crossplane",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 0,
+          "label": "ArgoCD",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 2,
+          "label": "Gremlin",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 0,
+          "label": "Cilium",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 1,
+          "label": "LaunchDarkly",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 0,
+          "label": "Istio",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 2,
+          "label": "Argo Workflow",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 1,
+          "label": "Karpenter",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 2,
+          "label": "Keda",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 2,
+          "label": "StormForge",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 0,
+          "label": "Hashicorp Vault",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 0,
+          "label": "Instana",
+          "active": true,
+          "link": "",
+          "moved": 1
+        },
+        {
+          "quadrant": 1,
+          "ring": 0,
+          "label": "Datadog",
+          "active": true,
+          "link": "",
+          "moved": 1
+        },
+        {
+          "quadrant": 1,
+          "ring": 0,
+          "label": "External Secrets Operator",
+          "active": false,
+          "link": "",
+          "moved": 0
+        }
+    ]
+}

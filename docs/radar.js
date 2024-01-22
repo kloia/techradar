@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 
-// Copyright (c) 2017 Zalando SE
+// Copyright (c) 2017-2024 Zalando SE
 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -191,16 +191,21 @@ function radar_visualization(config) {
     ].join(" ");
   }
 
+  // adjust with config.scale.
+  config.scale = config.scale || 1;
+  var scaled_width = config.width * config.scale;
+  var scaled_height = config.height * config.scale;
+
   var svg = d3.select("svg#" + config.svg_id)
     .style("background-color", config.colors.background)
-    .attr("width", config.width)
-    .attr("height", config.height);
+    .attr("width", scaled_width)
+    .attr("height", scaled_height);
 
   var radar = svg.append("g");
   if ("zoomed_quadrant" in config) {
     svg.attr("viewBox", viewbox(config.zoomed_quadrant));
   } else {
-    radar.attr("transform", translate(config.width / 2, config.height / 2));
+    radar.attr("transform", translate(scaled_width / 2, scaled_height / 2).concat(`scale(${config.scale})`));
   }
 
   var grid = radar.append("g");
@@ -245,9 +250,10 @@ function radar_visualization(config) {
         .text(config.rings[i].name)
         .attr("y", -rings[i].radius + 62)
         .attr("text-anchor", "middle")
-        .style("fill", "#c9c9c9")
-        .style("font-family", "Roboto, Helvetica")
-        .style("font-size", 42)
+        .style("fill", config.rings[i].color)
+        .style("opacity", 0.35)
+        .style("font-family", "Arial, Helvetica")
+        .style("font-size", "42px")
         .style("font-weight", "bold")
         .style("pointer-events", "none")
         .style("user-select", "none");
@@ -255,7 +261,7 @@ function radar_visualization(config) {
   }
 
   function legend_transform(quadrant, ring, index=null) {
-    var dx = ring < 2 ? 0 : 120;
+    var dx = ring < 2 ? 0 : 140;
     var dy = (index == null ? -16 : index * 12);
     if (ring % 2 === 1) {
       dy = dy + 36 + segmented[quadrant][ring-1].length * 12;
@@ -269,16 +275,22 @@ function radar_visualization(config) {
   // draw title and legend (only in print layout)
   if (config.print_layout) {
 
-    // title]
-    
-    // NOTE: Here is commented for Kloia Website
+    // title
+    radar.append("text")
+      .attr("transform", translate(title_offset.x, title_offset.y))
+      .text(config.title)
+      .style("font-family", "Arial, Helvetica")
+      .style("font-size", "30")
+      .style("font-weight", "bold")
 
-    // radar.append("text")
-    //   .attr("transform", translate(title_offset.x, title_offset.y))
-    //   .text(config.title)
-    //   .style("font-family", "Arial, Helvetica")
-    //   .style("fill", "#002A61")
-    //   .style("font-size", "34");
+    // date
+    radar
+      .append("text")
+      .attr("transform", translate(title_offset.x, title_offset.y + 20))
+      .text(config.date || "")
+      .style("font-family", "Arial, Helvetica")
+      .style("font-size", "14")
+      .style("fill", "#999")
 
     // footer
     radar.append("text")
@@ -286,8 +298,7 @@ function radar_visualization(config) {
       .text("▲ moved up     ▼ moved down")
       .attr("xml:space", "preserve")
       .style("font-family", "Arial, Helvetica")
-      .style("fill", "#002A61")
-      .style("font-size", "12");
+      .style("font-size", "10px");
 
     // legend
     var legend = radar.append("g");
@@ -299,27 +310,34 @@ function radar_visualization(config) {
         ))
         .text(config.quadrants[quadrant].name)
         .style("font-family", "Arial, Helvetica")
-        .style("fill", "#002A61")
-        .style("font-size", "24");
+        .style("font-size", "18px")
+        .style("font-weight", "bold");
       for (var ring = 0; ring < 4; ring++) {
         legend.append("text")
           .attr("transform", legend_transform(quadrant, ring))
           .text(config.rings[ring].name)
           .style("font-family", "Arial, Helvetica")
-          .style("font-size", "12")
-          .style("fill", "#002A61")
-          .style("font-weight", "bold");
+          .style("font-size", "12px")
+          .style("font-weight", "bold")
+          .style("fill", config.rings[ring].color);
         legend.selectAll(".legend" + quadrant + ring)
           .data(segmented[quadrant][ring])
           .enter()
+            .append("a")
+              .attr("href", function (d, i) {
+                 return d.link ? d.link : "#"; // stay on same page if no link was provided
+              })
+              // Add a target if (and only if) there is a link and we want new tabs
+              .attr("target", function (d, i) {
+                 return (d.link && config.links_in_new_tabs) ? "_blank" : null;
+              })
             .append("text")
-              .attr("fill", "#002A61")
               .attr("transform", function(d, i) { return legend_transform(quadrant, ring, i); })
               .attr("class", "legend" + quadrant + ring)
               .attr("id", function(d, i) { return "legendItem" + d.id; })
               .text(function(d, i) { return d.id + ". " + d.label; })
               .style("font-family", "Arial, Helvetica")
-              .style("font-size", "11")
+              .style("font-size", "11px")
               .on("mouseover", function(d) { showBubble(d); highlightLegendItem(d); })
               .on("mouseout", function(d) { hideBubble(d); unhighlightLegendItem(d); });
       }
@@ -376,12 +394,14 @@ function radar_visualization(config) {
 
   function highlightLegendItem(d) {
     var legendItem = document.getElementById("legendItem" + d.id);
-    legendItem.style.fontSize = "15px";
+    legendItem.setAttribute("filter", "url(#solid)");
+    legendItem.setAttribute("fill", "white");
   }
 
   function unhighlightLegendItem(d) {
     var legendItem = document.getElementById("legendItem" + d.id);
-    legendItem.style.fontSize = "12px";
+    legendItem.removeAttribute("filter");
+    legendItem.removeAttribute("fill");
   }
 
   // draw blips on radar
@@ -399,9 +419,13 @@ function radar_visualization(config) {
     var blip = d3.select(this);
 
     // blip link
-    if (!config.print_layout && d.active && d.hasOwnProperty("link")) {
+    if (d.active && Object.prototype.hasOwnProperty.call(d, "link") && d.link) {
       blip = blip.append("a")
         .attr("xlink:href", d.link);
+
+      if (config.links_in_new_tabs) {
+        blip.attr("target", "_blank");
+      }
     }
 
     // blip shape
@@ -428,7 +452,7 @@ function radar_visualization(config) {
         .attr("text-anchor", "middle")
         .style("fill", "#fff")
         .style("font-family", "Arial, Helvetica")
-        .style("font-size", function(d) { return blip_text.length > 2 ? "8" : "9"; })
+        .style("font-size", function(d) { return blip_text.length > 2 ? "8px" : "9px"; })
         .style("pointer-events", "none")
         .style("user-select", "none");
     }
@@ -446,52 +470,5 @@ function radar_visualization(config) {
     .nodes(config.entries)
     .velocityDecay(0.19) // magic number (found by experimentation)
     .force("collision", d3.forceCollide().radius(12).strength(0.85))
-    .alpha(0.1)
-    .alphaMin(0.2)
-    .on("tick", ticked)
-    .on("end", convertSvgToImage);
-
+    .on("tick", ticked);
 }
-
-const getSvgDataUrl = (svgData) => {
-  const canvas = document.createElement('canvas');
-  const context = canvas.getContext('2d');
-  const image = new Image();
-
-  image.onload = () => {
-    canvas.width = image.width;
-    canvas.height = image.height;
-    context.drawImage(image, 0, 0);
-
-    try {
-      const dataUrl = canvas.toDataURL('image/png');
-      image.src = dataUrl;
-    } catch (error) {
-      console.error('Failed to convert SVG to image:', error);
-    } finally {
-      URL.revokeObjectURL(image.src);
-    }
-  };
-
-  const blob = new Blob([svgData], { type: 'image/svg+xml' });
-  image.src = URL.createObjectURL(blob);
-
-  return image.src; // Return the data URL
-};
-
-
-const convertSvgToImage = () => {
-  const svgElement = document.getElementById('radar');
-  const svgData = new XMLSerializer().serializeToString(svgElement);
-  const imageSource = getSvgDataUrl(svgData);
-
-  const imageElement = new Image();
-  imageElement.onload = () => {
-    // Append the image element to the desired location in the DOM
-    document.body.prepend(imageElement); // or any other DOM element you want to append to
-  };
-  imageElement.onerror = (error) => {
-    console.error('Failed to load image:', error);
-  };
-  imageElement.src = imageSource;
-};

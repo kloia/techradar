@@ -1,12 +1,10 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Kloia Tech Radar</title>
-<link rel="shortcut icon" href="https://www.kloia.com/hubfs/favicon%20(3).ico">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo">
-
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="radar.js"></script>
@@ -16,434 +14,77 @@
 
 <body>
 
-<svg style="display:none" id="radar"></svg>
+<svg id="radar"></svg>
 
 <script>
+fetch('./config.json').then(function(response) {
+  return response.json();
+}).then(function(data) {
   radar_visualization({
     svg_id: "radar",
-    title: "Kloia Tech Radar",
     width: 1450,
     height: 1000,
     colors: {
-      background: "#FFF",
-      grid: "#002A61",
-      inactive: "#fff"
+      background: "#fff",
+      grid: '#dddde0',
+      inactive: "#ddd"
     },
+    title: "Kloia Tech Radar",
+    date: data.date,
     quadrants: [
       { name: "Platforms" },
       { name: "Tools" },
       { name: "Languages/Frameworks" },
-      { name: "Methods/Patterns" }
+      { name: "Methods/Patterns" },
     ],
     rings: [
-      { name: "ADOPT", color: "#93c47d" },
-      { name: "TRIAL", color: "#93d2c2" },
-      { name: "ASSESS", color: "#fbdb84" },
-      { name: "HOLD", color: "#efafa9" }
+      { name: "ADOPT", color: "#5ba300" },
+      { name: "TRIAL", color: "#009eb0" },
+      { name: "ASSESS", color: "#c7ba00" },
+      { name: "HOLD", color: "#e09b96" }
     ],
     print_layout: true,
+    links_in_new_tabs: true,
     // zoomed_quadrant: 0,
-    //ENTRIES
-    entries: [
-        {
-          quadrant: 0,
-          ring: 0,
-          label: "EKS",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 0,
-          ring: 1,
-          label: "Control Tower",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 3,
-          ring: 1,
-          label: "Adaptive Branching",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 3,
-          ring: 1,
-          label: "Dynamic Environments",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 3,
-          ring: 0,
-          label: "CQRS/Event Sourcing",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 3,
-          ring: 1,
-          label: "Event Storming",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 3,
-          ring: 1,
-          label: "Trunk-based Development",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 3,
-          ring: 1,
-          label: "BFF(Backend for Frontend)",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 3,
-          ring: 3,
-          label: "Reactive Programming",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 3,
-          ring: 3,
-          label: "Micro Frontends",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 2,
-          ring: 0,
-          label: "React",
-          active: false,
-          link: "../frameworks/reactjs.html",
-          moved: 0
-        },
-        {
-          quadrant: 2,
-          ring: 0,
-          label: "Redux",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 2,
-          ring: 0,
-          label: "MUI",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 2,
-          ring: 0,
-          label: "Spring",
-          active: false,
-          link: "../frameworks/spring.html",
-          moved: 0
-        },
-        {
-          quadrant: 2,
-          ring: 0,
-          label: "Karate Framework",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 2,
-          ring: 0,
-          label: ".NET",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 2,
-          ring: 3,
-          label: ".NET Framework",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 2,
-          ring: 1,
-          label: "GraphQL",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 1,
-          ring: 1,
-          label: "Camunda",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 1,
-          ring: 1,
-          label: "Auth0",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 1,
-          ring: 0,
-          label: "GitHub Copilot",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 1,
-          ring: 0,
-          label: "AWS App2Containers",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 1,
-          ring: 1,
-          label: "Tilt",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 1,
-          ring: 1,
-          label: "Microsoft .NET Upgrade Assistant",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 1,
-          ring: 2,
-          label: "sentry.io",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 1,
-          ring: 2,
-          label: "AWS Toolkit for Visual Studio",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 0,
-          ring: 0,
-          label: "Kubernetes",
-          active: false,
-          link: "../infrastructure/kubernetes.html",
-          moved: 0
-        },
-        {
-          quadrant: 0,
-          ring: 0,
-          label: "Rancher",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 0,
-          ring: 3,
-          label: "OpenShift",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 1,
-          ring: 0,
-          label: "Terragrunt",
-          active: false,
-          link: "",
-          moved: 1
-        },
-        {
-          quadrant: 1,
-          ring: 3,
-          label: "Crossplane",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 1,
-          ring: 0,
-          label: "ArgoCD",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 1,
-          ring: 2,
-          label: "Gremlin",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 1,
-          ring: 0,
-          label: "Cilium",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 1,
-          ring: 1,
-          label: "LaunchDarkly",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 1,
-          ring: 0,
-          label: "Istio",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 1,
-          ring: 2,
-          label: "Argo Workflow",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 1,
-          ring: 1,
-          label: "Karpenter",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 1,
-          ring: 2,
-          label: "Keda",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 1,
-          ring: 2,
-          label: "StormForge",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 1,
-          ring: 0,
-          label: "Hashicorp Vault",
-          active: false,
-          link: "",
-          moved: 0
-        },
-        {
-          quadrant: 1,
-          ring: 0,
-          label: "Instana",
-          active: true,
-          link: "",
-          moved: 1
-        },
-        {
-          quadrant: 1,
-          ring: 0,
-          label: "Datadog",
-          active: true,
-          link: "",
-          moved: 1
-        },
-        {
-          quadrant: 1,
-          ring: 0,
-          label: "External Secrets Operator",
-          active: false,
-          link: "",
-          moved: 0
-        }
-    ]
-    //ENTRIES
+    entries: data.entries
   });
+}).catch(function(err) {
+  console.log('Error loading config.json', err);
+});
 </script>
-
 
 <table>
-<tr>
-<td>
-
-<h3>What is the Tech Radar?</h3>
-
-<p>
-The Kloia Tech Radar is a list of technologies, complemented by an assessment result, called <em>ring assignment</em>. We use four rings with the following semantics:
-</p>
-
-<ul>
-<li><strong>ADOPT</strong> &mdash; Technologies we have high confidence in to serve our purpose, also in large scale. Technologies with a usage culture in our Kloia production environment, low risk and recommended to be widely used.</li>
-<li><strong>TRIAL</strong> &mdash; Technologies that we have seen work with success in project work to solve a real problem; first serious usage experience that confirm benefits and can uncover limitations. TRIAL technologies are slightly more risky; some engineers in our organization walked this path and will share knowledge and experiences.</li>
-<li><strong>ASSESS</strong> &mdash; Technologies that are promising and have clear potential value-add for us; technologies worth to invest some research and prototyping efforts in to see if it has impact. ASSESS technologies have higher risks; they are often brand new and highly unproven in our organisation. You will find some engineers that have knowledge in the technology and promote it, you may even find teams that have started a prototyping effort.</li>
-<li><strong>HOLD</strong> &mdash; Technologies not recommended to be used for new projects. Technologies that we think are not (yet) worth to (further) invest in. HOLD technologies should not be used for new projects, but usually can be continued for existing projects.</li>
-</ul>
-
-</td><td>
-
-<h3>What is the purpose?</h3>
-
-<p>
-The Tech Radar is a tool to inspire and support engineering teams at Kloia to pick the best technologies for new projects; it provides a platform to share knowledge and experience in technologies, to reflect on technology decisions and continuously evolve our technology landscape. Based on the <a href="https://www.thoughtworks.com/radar">pioneering work of ThoughtWorks</a>, our Tech Radar sets out the changes in technologies that are interesting in software development &mdash; changes that we think our engineering teams should pay attention to and consider using in their projects.
-</p>
-
-<h3>How do we maintain it?</h3>
-
-<p>
-The Tech Radar is maintained by the <em>Kloia Technologists Guild</em> &mdash; an open group of senior Kloia technologists committed to devote time to the Tech Radar purpose. The guild self organises to maintain the Tech Radar documents, including this public version. Assignment of technologies to rings is the outcome of ring change proposals, which are discussed and voted on in guild meetings. The Tech Radar depends on active participation and input from all engineering teams at Kloia.
-</p>
-
-</td></tr>
-</table>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-105375141-2', 'auto');
-  ga('send', 'pageview');
-</script>
+  <tr>
+  <td>
+  
+  <h3>What is the Tech Radar?</h3>
+  
+  <p>
+  The Kloia Tech Radar is a list of technologies, complemented by an assessment result, called <em>ring assignment</em>. We use four rings with the following semantics:
+  </p>
+  
+  <ul>
+  <li><strong>ADOPT</strong> &mdash; Technologies we have high confidence in to serve our purpose, also in large scale. Technologies with a usage culture in our Kloia production environment, low risk and recommended to be widely used.</li>
+  <li><strong>TRIAL</strong> &mdash; Technologies that we have seen work with success in project work to solve a real problem; first serious usage experience that confirm benefits and can uncover limitations. TRIAL technologies are slightly more risky; some engineers in our organization walked this path and will share knowledge and experiences.</li>
+  <li><strong>ASSESS</strong> &mdash; Technologies that are promising and have clear potential value-add for us; technologies worth to invest some research and prototyping efforts in to see if it has impact. ASSESS technologies have higher risks; they are often brand new and highly unproven in our organisation. You will find some engineers that have knowledge in the technology and promote it, you may even find teams that have started a prototyping effort.</li>
+  <li><strong>HOLD</strong> &mdash; Technologies not recommended to be used for new projects. Technologies that we think are not (yet) worth to (further) invest in. HOLD technologies should not be used for new projects, but usually can be continued for existing projects.</li>
+  </ul>
+  
+  </td><td>
+  
+  <h3>What is the purpose?</h3>
+  
+  <p>
+  The Tech Radar is a tool to inspire and support engineering teams at Kloia to pick the best technologies for new projects; it provides a platform to share knowledge and experience in technologies, to reflect on technology decisions and continuously evolve our technology landscape. Based on the <a href="https://www.thoughtworks.com/radar">pioneering work of ThoughtWorks</a>, our Tech Radar sets out the changes in technologies that are interesting in software development &mdash; changes that we think our engineering teams should pay attention to and consider using in their projects.
+  </p>
+  
+  <h3>How do we maintain it?</h3>
+  
+  <p>
+  The Tech Radar is maintained by the <em>Kloia Technologists Guild</em> &mdash; an open group of senior Kloia technologists committed to devote time to the Tech Radar purpose. The guild self organises to maintain the Tech Radar documents, including this public version. Assignment of technologies to rings is the outcome of ring change proposals, which are discussed and voted on in guild meetings. The Tech Radar depends on active participation and input from all engineering teams at Kloia.
+  </p>
+  
+  </td></tr>
+  </table>
 </body>
 </html>

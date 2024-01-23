@@ -213,7 +213,7 @@
           "ring": 0,
           "label": "Kubernetes",
           "active": false,
-          "link": "../infrastructure/kubernetes.html",
+          "link": "",
           "moved": 0
         },
         {

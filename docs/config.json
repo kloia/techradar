@@ -66,7 +66,7 @@
         },
         {
           "quadrant": 3,
-          "ring": 3,
+          "ring": 1,
           "label": "Reactive Programming",
           "active": false,
           "link": "",
@@ -163,6 +163,38 @@
         {
           "quadrant": 1,
           "ring": 0,
+          "label": "Github Actions",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant":2,
+          "ring":0,
+          "label":"Typescript",
+          "active":false,
+          "link":"",
+          "moved":0
+        },
+        {
+          "quadrant":2,
+          "ring":0,
+          "label":"NextJS",
+          "active":false,
+          "link":"",
+          "moved":0
+        },
+        {
+          "quadrant":2,
+          "ring":0,
+          "label":"Tailwind",
+          "active":false,
+          "link":"",
+          "moved":0
+        },
+        {
+          "quadrant": 1,
+          "ring": 0,
           "label": "GitHub Copilot",
           "active": false,
           "link": "",
@@ -213,7 +245,7 @@
           "ring": 0,
           "label": "Kubernetes",
           "active": false,
-          "link": "",
+          "link": "../infrastructure/kubernetes.html",
           "moved": 0
         },
         {
@@ -231,6 +263,14 @@
           "active": false,
           "link": "",
           "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 0,
+          "label": "Terraform",
+          "active": false,
+          "link": "",
+          "moved": 1
         },
         {
           "quadrant": 1,
@@ -297,12 +337,44 @@
           "moved": 0
         },
         {
+          "quadrant":1,
+          "ring":2,
+          "label":"Amazon Q",
+          "active":false,
+          "link":"",
+          "moved":0
+        },
+        {
           "quadrant": 1,
           "ring": 1,
           "label": "Karpenter",
           "active": false,
           "link": "",
           "moved": 0
+        },
+        {
+          "quadrant":3, 
+          "ring":1,
+          "label":"Zero-trust security in CI/CD",
+          "active":false,
+          "link":"",
+          "moved":0
+        },
+        {
+          "quadrant":3, 
+          "ring":0,
+          "label":"Least privelege",
+          "active":false,
+          "link":"",
+          "moved":0
+        },
+        {
+          "quadrant":0, 
+          "ring":0,
+          "label":"ECS",
+          "active":false,
+          "link":"",
+          "moved":0
         },
         {
           "quadrant": 1,

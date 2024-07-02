@@ -9,14 +9,6 @@
           "moved": 0
         },
         {
-          "quadrant": 0,
-          "ring": 1,
-          "label": "Control Tower",
-          "active": false,
-          "link": "",
-          "moved": 0
-        },
-        {
           "quadrant": 3,
           "ring": 1,
           "label": "Adaptive Branching",
@@ -156,6 +148,30 @@
           "quadrant": 1,
           "ring": 1,
           "label": "Auth0",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 2,
+          "label": "CAST Software",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 2,
+          "label": "Unleash",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 2,
+          "label": "GrowthBook",
           "active": false,
           "link": "",
           "moved": 0
@@ -420,6 +436,94 @@
           "quadrant": 1,
           "ring": 0,
           "label": "External Secrets Operator",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 0,
+          "ring": 2,
+          "label": "Apache CloudStack",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 0,
+          "ring": 3,
+          "label": "EKS Anywhere",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 2,
+          "label": "Rancher Fleet",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 0,
+          "label": "OpenTelemetry",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 1,
+          "label": "Amazon Lex",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 2,
+          "label": "Baselime",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 1,
+          "label": "Release-please",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 0,
+          "label": "Control Tower",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 0,
+          "label": "AWS ADOT",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 0,
+          "label": "AWS RUM",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 0,
+          "label": "AWS MGN",
           "active": false,
           "link": "",
           "moved": 0

@@ -162,22 +162,6 @@
         },
         {
           "quadrant": 1,
-          "ring": 2,
-          "label": "Unleash",
-          "active": false,
-          "link": "",
-          "moved": 0
-        },
-        {
-          "quadrant": 1,
-          "ring": 2,
-          "label": "GrowthBook",
-          "active": false,
-          "link": "",
-          "moved": 0
-        },
-        {
-          "quadrant": 1,
           "ring": 0,
           "label": "Github Actions",
           "active": false,
@@ -243,14 +227,6 @@
         {
           "quadrant": 1,
           "ring": 2,
-          "label": "sentry.io",
-          "active": false,
-          "link": "",
-          "moved": 0
-        },
-        {
-          "quadrant": 1,
-          "ring": 2,
           "label": "AWS Toolkit for Visual Studio",
           "active": false,
           "link": "",
@@ -274,8 +250,24 @@
         },
         {
           "quadrant": 0,
-          "ring": 3,
+          "ring": 2,
           "label": "OpenShift",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 0,
+          "ring": 2,
+          "label": "Kubevirt",
+          "active": false,
+          "link": "",
+          "moved": 0
+        },
+        {
+          "quadrant": 1,
+          "ring": 2,
+          "label": "digger.dev",
           "active": false,
           "link": "",
           "moved": 0
@@ -340,14 +332,6 @@
           "quadrant": 1,
           "ring": 0,
           "label": "Istio",
-          "active": false,
-          "link": "",
-          "moved": 0
-        },
-        {
-          "quadrant": 1,
-          "ring": 2,
-          "label": "Argo Workflow",
           "active": false,
           "link": "",
           "moved": 0
@@ -436,14 +420,6 @@
           "quadrant": 1,
           "ring": 0,
           "label": "External Secrets Operator",
-          "active": false,
-          "link": "",
-          "moved": 0
-        },
-        {
-          "quadrant": 0,
-          "ring": 2,
-          "label": "Apache CloudStack",
           "active": false,
           "link": "",
           "moved": 0

@@ -1,0 +1,249 @@
+@import 'colors';
+@import 'layout';
+
+@if $UIRefresh2022 {
+  .hero-banner {
+    height: $tabletBannerHeight;
+    background: linear-gradient(135deg, $kloia-gradient-start 0%, $kloia-gradient-end 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: $white;
+    display: flex;
+    align-items: center;
+    margin: 0 !important;
+    position: relative;
+    overflow: hidden;
+
+    // Add subtle pattern overlay
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    @include media-query-large {
+      height: $bannerHeight;
+    }
+
+    @include media-query-xlarge {
+      height: $bannerHeight;
+    }
+
+    &__wrapper {
+      margin: auto;
+      width: 90%;
+      position: relative;
+      z-index: 1;
+
+      @include layout-margin(1, $screen-small);
+      @include layout-margin(1, $screen-medium);
+      @include layout-margin(1, $screen-large);
+      @include layout-margin(1, $screen-xlarge);
+      @include layout-margin(1, $screen-xxlarge);
+      @include layout-margin(1, $screen-xxxlarge);
+    }
+
+    &__content {
+      max-width: 800px;
+    }
+
+    &__title-text {
+      width: fit-content;
+      text-align: left;
+      text-transform: none;
+      letter-spacing: -0.02em;
+      cursor: pointer;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-weight: 700;
+      font-size: 3rem;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+
+      @include media-query-medium {
+        font-size: 3.5rem;
+      }
+
+      @include media-query-large {
+        font-size: 4rem;
+      }
+    }
+
+    &__subtitle-text {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-weight: 400;
+      font-size: 1.25rem;
+      line-height: 1.6;
+      width: 100%;
+      max-width: 600px;
+      text-align: left;
+      text-transform: none;
+      letter-spacing: 0;
+      opacity: 0.95;
+      margin-top: 1rem;
+
+      @include media-query-medium {
+        width: 80%;
+        font-size: 1.375rem;
+      }
+
+      @include media-query-large {
+        width: 70%;
+        font-size: 1.5rem;
+      }
+
+      @include media-query-xlarge {
+        width: 60%;
+      }
+    }
+  }
+}
+
+// Kloia Header Styles
+.kloia-header {
+  background: $white;
+  border-bottom: 1px solid rgba($kloia-accent, 0.1);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba($kloia-dark, 0.05);
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    &-img {
+      height: 40px;
+      width: auto;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      gap: 1rem;
+    }
+  }
+
+  &__nav-link {
+    color: $kloia-dark;
+    text-decoration: none;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $kloia-primary;
+    }
+  }
+}
+
+// Kloia Footer Styles
+.kloia-footer {
+  background: $kloia-dark;
+  color: $white;
+  padding: 3rem 0 1rem;
+  margin-top: 4rem;
+
+  &__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  &__brand {
+    .kloia-footer__logo {
+      height: 40px;
+      width: auto;
+      margin-bottom: 1rem;
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  &__tagline {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba($white, 0.8);
+    margin: 0;
+  }
+
+  &__links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__column {
+    h4 {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-weight: 600;
+      color: $white;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    a {
+      display: block;
+      color: rgba($white, 0.7);
+      text-decoration: none;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $kloia-secondary;
+      }
+    }
+  }
+
+  &__bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem 0;
+    border-top: 1px solid rgba($white, 0.1);
+    text-align: center;
+
+    p {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 0.85rem;
+      color: rgba($white, 0.6);
+      margin: 0;
+    }
+  }
+}

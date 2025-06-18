@@ -1,0 +1,238 @@
+@import 'layout';
+@import 'colors';
+@import 'fonts';
+
+.helper-description {
+  @include eight-column-layout-margin;
+  padding-top: 32px;
+  margin-top: 24px;
+
+  p {
+    font-family: $baseFontFamily;
+    font-weight: $fontWeightMedium;
+    font-size: $fontSizeMedium;
+    color: $kloia-dark;
+    line-height: $lineHeightRelaxed;
+    margin: 0;
+    display: none;
+
+    a {
+      color: $kloia-primary;
+      text-decoration: none;
+      font-weight: $fontWeightSemiBold;
+      
+      &:hover {
+        text-decoration: underline;
+        color: $kloia-secondary;
+      }
+    }
+  }
+
+  .loader-text {
+    display: block;
+    text-align: center;
+    
+    &__title {
+      display: inline-block;
+      font-family: $titleFontFamily;
+      font-size: 2.5rem;
+      font-weight: $fontWeightSemiBold;
+      color: $kloia-primary;
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, $kloia-primary 0%, $kloia-secondary 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    p {
+      font-family: $baseFontFamily;
+      color: $kloia-accent;
+      font-size: $fontSizeBase;
+    }
+  }
+}
+
+.input-sheet-form {
+  @include eight-column-layout-margin;
+  display: flex;
+  flex-direction: column;
+
+  p {
+    margin-top: 88px;
+    text-align: center;
+    font-family: $baseFontFamily;
+    font-size: $fontSizeMedium;
+    color: $kloia-dark;
+    font-weight: $fontWeightMedium;
+
+    a {
+      color: $kloia-primary;
+      text-decoration: none;
+      font-weight: $fontWeightSemiBold;
+      
+      &:hover {
+        text-decoration: underline;
+        color: $kloia-secondary;
+      }
+    }
+  }
+
+  p.with-error {
+    margin-top: 48px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    input#document-input {
+      font-family: $baseFontFamily;
+      background-color: $white;
+      border: 2px solid rgba($kloia-accent, 0.2);
+      border-radius: 8px;
+      letter-spacing: $letterSpacingNormal;
+      height: 56px;
+      width: 100%;
+      max-width: 600px;
+      margin-bottom: 24px;
+      color: $kloia-dark;
+      font-size: $fontSizeMedium;
+      padding: 0 20px;
+      transition: all 0.2s ease;
+
+      &:focus {
+        outline: none;
+        border-color: $kloia-primary;
+        box-shadow: 0 0 0 3px rgba($kloia-primary, 0.1);
+      }
+
+      &::placeholder {
+        color: $kloia-accent;
+        font-weight: $fontWeightRegular;
+      }
+    }
+
+    input[type='submit'] {
+      background: linear-gradient(135deg, $kloia-primary 0%, $kloia-secondary 100%);
+      color: $white;
+      font-size: $fontSizeMedium;
+      font-family: $baseFontFamily;
+      font-weight: $fontWeightSemiBold;
+      line-height: 1.4;
+      padding: 16px 32px;
+      margin-bottom: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba($kloia-primary, 0.2);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba($kloia-primary, 0.3);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba($kloia-primary, 0.3);
+      }
+    }
+
+    input:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+      transform: none !important;
+    }
+
+    a {
+      color: $kloia-accent;
+      text-decoration: none;
+      font-family: $baseFontFamily;
+      font-size: $fontSizeBase;
+      font-weight: $fontWeightMedium;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $kloia-primary;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Error container styles
+.error-container {
+  @include eight-column-layout-margin;
+  margin-top: 2rem;
+
+  &__message {
+    background: rgba(#d14234, 0.1);
+    border: 1px solid rgba(#d14234, 0.2);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+
+    p {
+      font-family: $baseFontFamily;
+      color: #d14234;
+      margin: 0 0 0.5rem 0;
+      font-size: $fontSizeBase;
+      line-height: $lineHeightBase;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        color: #d14234;
+        font-weight: $fontWeightSemiBold;
+        text-decoration: underline;
+
+        &:hover {
+          color: darken(#d14234, 10%);
+        }
+      }
+    }
+  }
+}
+
+// Loading wrapper improvements
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1rem;
+
+  div {
+    width: 12px;
+    height: 12px;
+    background: $kloia-primary;
+    border-radius: 50%;
+    animation: bounce 1.4s ease-in-out infinite both;
+
+    &:nth-child(2) {
+      background: $kloia-secondary;
+    }
+
+    &:nth-child(3) {
+      background: $kloia-accent;
+    }
+  }
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}

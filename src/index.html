@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link href="/images/favicon.ico" rel="icon" /> -->
+    <!-- <link rel="preconnect" href="https://rsms.me/" /> -->
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" integrity="sha512-byor" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <title>Kloia Technology Radar</title>
+  </head>
+
+  <body>
+    <div class="hero-banner">
+      <div class="hero-banner__wrapper">
+        <div class="hero-banner__content">
+          <h1 class="hero-banner__title-text">Kloia Technology Radar</h1>
+        </div>
+      </div>
+    </div>
+    <main>
+      <div id="pdf-cover-page">
+        <div class="pdf-banner-header">
+          <img src="/images/kloia-horizontal-logo-multicolor.png" alt="Kloia" class="pdf-kloia-logo" />
+        </div>
+        <h1 class="pdf-title">Kloia Technology Radar</h1>
+        <div class="pdf-powered-by-text">
+          <span>DevOps • Cloud • Platform Engineering</span>
+        </div>
+      </div>
+      <div class="helper-description home-page">
+        <p>
+          Explore <a href="https://kloia.com">Kloia's</a> Technology Radar showcasing our expertise in DevOps, Cloud Native, and Platform Engineering practices.
+          <a href="https://kloia.com/blog">Learn more about our approach.</a>
+        </p>
+        <span class="loader-text">
+          <span class="loader-text__title">Loading Kloia Technology Radar...</span>
+          <div class="loader-wrapper">
+            <div style="animation-delay: 0s"></div>
+            <div style="animation-delay: 0.25s"></div>
+            <div style="animation-delay: 0.75s"></div>
+            <div style="animation-delay: 0.5s"></div>
+          </div>
+        </span>
+      </div>
+      <div id="error-container" class="error-container home-page"></div>
+      <div class="input-sheet-form home-page" style="display: none;">
+        <p>
+          Enter the URL of your
+          <a href="https://kloia.com/blog" target="_blank">Google Sheet, CSV or JSON</a> file below…
+        </p>
+        <form id="byor-form-submit" method="get">
+          <input
+            type="text"
+            name="documentId"
+            id="document-input"
+            placeholder="e.g. https://docs.google.com/spreadsheets/d/<sheetid> or hosted CSV/JSON file"
+            required=""
+          />
+          <input type="submit" value="Build my radar" />
+
+        </form>
+      </div>
+      <div class="graph-header"></div>
+      <div id="radar">
+        <p class="no-blip-text">
+          There are no blips on this quadrant, please check your Google sheet/CSV/JSON file once.
+        </p>
+      </div>
+      <div class="all-quadrants-mobile show-all-quadrants-mobile"></div>
+      <div class="graph-footer"></div>
+    </main>
+    <footer class="home-page kloia-footer">
+      <div class="pdf-footer">
+        <div class="pdf-powered-by-text">
+          <div class="pdf-footer-title">Kloia Technology Radar</div>
+          <a class="radar-link" id="generated-radar-link" href="https://kloia.com">
+            kloia.com
+          </a>
+        </div>
+      </div>
+      <div class="kloia-footer__content">
+        <div class="kloia-footer__brand">
+          <img src="/images/kloia-horizontal-logo-multicolor.png" alt="Kloia" class="kloia-footer__logo" />
+          <p class="kloia-footer__tagline">
+            Empowering businesses with modern software practices—Kloia helps you transition, upskill, and optimize for long-term success in DevOps, Cloud, Testing, and AI.
+          </p>
+        </div>
+        <div class="kloia-footer__links">
+          <div class="kloia-footer__column">
+            <h4>Solutions</h4>
+            <a href="https://kloia.com/solutions/devops">DevOps Solutions</a>
+            <a href="https://kloia.com/solutions/cloud">Cloud Solutions</a>
+            <a href="https://www.kloia.com/solutions/observability">Observability Solutions</a>
+            <a href="https://www.kloia.com/genai">GenAI Solutions</a>
+            <a href="https://www.kloia.com/solutions/application-modernization">Application Modernization</a>
+            <a href="https://www.kloia.com/solutions/testing">Testing Solutions</a>
+          </div>
+          <div class="kloia-footer__column">
+            <h4>Company</h4>
+            <a href="https://kloia.com/about-us">About</a>
+            <a href="https://kloia.com/casestudies">Case Studies</a>
+            <a href="https://kloia.com/blog">Blog</a>
+            <a href="https://kloia.com/contact">Contact</a>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+    <div class="pdf-page-footer">
+      <div class="footer-left">kloia.com</div>
+      <div class="footer-right">
+        Technology Radar, <span class="footer-date">dd/mm/yyyy</span> | <span class="footer-page-number">00</span>
+      </div>
+    </div>
+  </body>
+</html>

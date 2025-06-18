@@ -1,0 +1,63 @@
+$green: #86b782;
+$blue: #1ebccd;
+$orange: #f38a3e;
+$violet: #b32059;
+$pink: #ee0b77;
+
+$grey-darkest: #bababa;
+$grey-dark: #cacaca;
+$grey: #dadada;
+$grey-light: #eee;
+$grey-lightest: #fafafa;
+$grey-even-darker: #d7d7d7;
+
+$white: #fff;
+$black: #000;
+$grey-text: rgb(51, 51, 51);
+
+$grey-alpha-03: rgba(255, 255, 255, 0.3);
+
+// Brand colors for use across theme.
+$black: #000000; //onyx
+$white: #ffffff; //white
+$wave: #163c4d; //wave
+$wave-light: #6b8591; //wave-light
+$flamingo: #e16a7c; //flamingo
+$mist: #edf1f3; //mist (ededed)
+$sapphire: #47a1ad; //$sapphire
+$jade: #6b9e78; //jade
+$turmeric: #cc850a; //turmeric
+$amethyst: #634f7d; //amethyst
+
+// Kloia Brand Colors
+$kloia-primary: #1f8290; // Primary Kloia blue-teal
+$kloia-secondary: #47a1ad; // Secondary Kloia teal
+$kloia-accent: #6b8591; // Accent color
+$kloia-dark: #3c606f; // Dark text color
+$kloia-light: #f7fafc; // Light background
+$kloia-gradient-start: #1f8290;
+$kloia-gradient-end: #47a1ad;
+
+// Override theme colors with Kloia colors
+$wave: $kloia-primary; // Use Kloia primary as main button color
+$sapphire: $kloia-secondary; // Use Kloia secondary
+$amethyst: $kloia-accent; // Use Kloia accent
+
+// Other colors
+$mist-s30: #71777d;
+$mist-s20: #d5d9db;
+$mist-s10: #e1e5e7;
+$mist-light: #f7fafc;
+$flamingo-s40: #bd4257;
+
+$button-normal: $kloia-primary; //button color - Kloia primary
+$button-disabled: #909090; //disabled state for links and buttons
+
+$link-normal: $kloia-dark; //links color - Kloia dark
+$link-hover: $kloia-primary; //links hover state color - Kloia primary
+$error-text: #d14234;
+
+$flamingo-dark: #9b293c; //flamingo-dark
+$sapphire-dark: $kloia-primary; //Use Kloia primary
+$jade-dark: #517b5c; //jade-dark
+$turmeric-dark: #a06908; //turmeric-dark

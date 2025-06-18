@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+// Primary font family - Inter for modern, clean look
+$baseFontFamily: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$titleFontFamily: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+// Legacy font variables for compatibility
+$baseFont: 1rem; // 16px
+$baseWeight: 400;
+
+// Font weights
+$fontWeightLight: 300;
+$fontWeightRegular: 400;
+$fontWeightMedium: 500;
+$fontWeightSemiBold: 600;
+$fontWeightBold: 700;
+
+// Font sizes
+$fontSizeSmall: 0.875rem; // 14px
+$fontSizeBase: 1rem; // 16px
+$fontSizeMedium: 1.125rem; // 18px
+$fontSizeLarge: 1.25rem; // 20px
+$fontSizeXLarge: 1.5rem; // 24px
+
+// Line heights
+$lineHeightTight: 1.25;
+$lineHeightBase: 1.5;
+$lineHeightRelaxed: 1.75;
+
+// Letter spacing
+$letterSpacingTight: -0.025em;
+$letterSpacingNormal: 0;
+$letterSpacingWide: 0.025em;

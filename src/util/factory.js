@@ -295,7 +295,7 @@ const Factory = function () {
     })
 
     // Always load Kloia's radar data automatically
-    const kloiaRadarUrl = 'https://plum-barbie-93.tiiny.site/radar.csv'
+    const kloiaRadarUrl = 'https://kloia-techradar.s3.eu-west-1.amazonaws.com/radar.csv'
     sheet = CSVDocument(kloiaRadarUrl)
     sheet.init().build()
   }
